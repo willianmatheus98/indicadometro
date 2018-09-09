@@ -1,0 +1,31 @@
+body {
+  padding-top: 5rem;
+}
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.invert { filter: invert(100%); }
+
+.loading{
+   margin:0;
+   padding:0;
+   position:absolute;
+   z-index: -1;
+   display: none;
+   width: 100%;
+   height: 200%;
+   /**scalable background to fill available viewport**/
+background-color: #fafafa;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
