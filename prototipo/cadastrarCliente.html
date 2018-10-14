@@ -1,7 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
-<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-<!-- /Added by HTTrack -->
+<html lang="pt_BR">
 
 <head>
     <meta charset="utf-8">
@@ -10,18 +8,20 @@
     <meta name="author" content="">
     <link rel="icon" href="dist/img/logo.png">
 
-    <title>Indicadômetro - Home</title>
-
+    <title>Indicadômetro - Cadastro de Cliente</title>
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
+    <link href="dist/css/floating-labels.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
     <link href="dist/css/custom.css" rel="stylesheet">
+
+
 </head>
 
 <body>
     <div id="background" class="loading">
-
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
             <a class="navbar-brand" href="index.html"><img src="dist/img/logo.png" class="invert" width="30"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -108,34 +108,91 @@
                 </form>
             </div>
         </nav>
-
-        <main role="main" class="container">
-            <div class="row">
-
-                <div class="starter-template">
-                    <h1>O que é o Indicadômetro?</h1>
-                    <p class="lead">É simplesmente a maior comunidade de avaliações existente, envolvendo cerca de 10 milhões de usuários, que são divididos entre usuários clientes e parceiros, tudo isso para você não se arrepender após gastar dinheiro com um mal serviço, use o Indicadômetro sem medo de errar.</p>
-                </div>
-            </div>
-
-        </main>
     </div>
+    <form style="margin-top: 30px" action="index.html" class="form-signin">
+        <div class="text-center mb-4">
+            <img class="mb-4" src="dist/img/logo.png" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-normal">Cliente</h1>
+            <p>Preencha o formulário e participe da maior comunidade de avaliações sobre produtos e serviços.</p>
+        </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="assets/js/vendor/popper.min.js"></script>
-    <script src="dist/js/bootstrap.min.js"></script>
-    <script>
-        //invoke background fadein on page load 
-        $(window).ready(function() {
-            $('#background').fadeIn(1500);
-            setTimeout(function() {
-                $('#background').removeClass('loading');
-            }, 1000);
+        <div class="form-label-group">
+            <input type="text" id="inputNome" class="form-control" placeholder="Nome completo" required autofocus>
+            <label for="inputNome">Nome completo</label>
+        </div>
 
-            //fadeIn rate in milliseconds. 
-            //A higher number = slower fadeIn rate 
-        });
-    </script>
+        <div class="form-label-group">
+            <span>Data de Nascimento</span>
+            <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+            <!-- <label for="inputIdade">Idade</label> -->
+        </div>
+        <label class="col-md-1 control-label" for="radios">Sexo</label>
+
+        <div class="form-label-group">
+            <div class="col-md-4">
+                <label required="" class="radio-inline" for="radios-0">
+      <input name="sexo" id="sexo" value="feminino" type="radio" required>
+      Feminino
+    </label>
+                <label class="radio-inline" for="radios-1">
+      <input name="sexo" id="sexo" value="masculino" type="radio">
+      Masculino
+    </label>
+            </div>
+        </div>
+
+        <div class="form-label-group">
+            <input type="phone" id="inputPhone" class="form-control" placeholder="Telefone" required autofocus>
+            <label for="inputPhone">Telefone</label>
+        </div>
+
+        <div class="form-label-group">
+            <input type="email" id="inputEmail" class="form-control" placeholder="Endereço de E-mail" required autofocus>
+            <label for="inputEmail">E-mail</label>
+        </div>
+
+        <div class="form-label-group">
+            <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+            <label for="inputPassword">Senha</label>
+        </div>
+
+        <div class="form-label-group">
+            <input type="password" id="inputPasswordConfirm" class="form-control" placeholder="Senha" required>
+            <label for="inputPasswordConfirm">Confirmar senha</label>
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar-se como Cliente</button>
+        <p class="mt-5 mb-3 text-muted text-center">&copy;2018</p>
+    </form>
+
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="assets/js/vendor/popper.min.js"></script>
+<script src="dist/js/bootstrap.min.js"></script>
+<!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+<script>
+    //invoke background fadein on page load 
+    $(window).ready(function() {
+        $('#background').fadeIn(1500);
+        setTimeout(function() {
+            $('#background').removeClass('loading');
+        }, 1000);
+
+        //fadeIn rate in milliseconds. 
+        //A higher number = slower fadeIn rate 
+        var date_input=$('input[name="date"]'); //our date input has the name "date"
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+      var options={
+        format: 'mm/dd/yyyy',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+      };
+      date_input.datepicker(options);
+    });
+</script>
 
 </html>
