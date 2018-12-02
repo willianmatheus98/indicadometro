@@ -16,7 +16,7 @@
     <link href="dist/css/floating-labels.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="dist/css/custom.css" rel="stylesheet">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" ></script>
 
 </head>
 
@@ -24,9 +24,10 @@
     <div id="background" class="loading">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
             <a class="navbar-brand" href="index.html"><img src="dist/img/logo.png" class="invert" width="30"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
@@ -37,14 +38,16 @@
                         <a class="nav-link" href="login.html">Logar</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="https://example.com/" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastro</a>
+                        <a class="nav-link dropdown-toggle" href="https://example.com/" id="dropdown01" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Cadastro</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown01">
                             <a class="dropdown-item" href="cadastrarCliente.html">Seja um Cliente</a>
                             <a class="dropdown-item" href="cadastrarParceiro.html">Seja um Parceiro</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="https://example.com/" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Serviços</a>
+                        <a class="nav-link dropdown-toggle" href="https://example.com/" id="dropdown01" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Serviços</a>
                         <div class="dropdown-menu scrollable-menu" aria-labelledby="dropdown01">
 
                             <a class="dropdown-item" href="servicos.html">Abastecimento</a>
@@ -81,7 +84,8 @@
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Deseja buscar algo no site?" aria-label="Search">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Deseja buscar algo no site?"
+                        aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
                 </form>
             </div>
@@ -100,8 +104,13 @@
         </div>
 
         <div class="form-label-group">
+            <input type="text" id="inputCpf" class="form-control" placeholder="CPF" required autofocus>
+            <label for="inputCpf">CPF</label>
+        </div>
+
+        <div class="form-label-group">
             <span>Data de Nascimento</span>
-            <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+            <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" />
             <!-- <label for="inputIdade">Idade</label> -->
         </div>
         <label class="col-md-1 control-label" for="radios">Sexo</label>
@@ -109,13 +118,13 @@
         <div class="form-label-group">
             <div class="col-md-4">
                 <label required="" class="radio-inline" for="radios-0">
-      <input name="sexo" id="sexo" value="feminino" type="radio" required>
-      Feminino
-    </label>
+                    <input name="sexo" id="sexo" value="feminino" type="radio" required>
+                    Feminino
+                </label>
                 <label class="radio-inline" for="radios-1">
-      <input name="sexo" id="sexo" value="masculino" type="radio">
-      Masculino
-    </label>
+                    <input name="sexo" id="sexo" value="masculino" type="radio">
+                    Masculino
+                </label>
             </div>
         </div>
 
@@ -125,7 +134,8 @@
         </div>
 
         <div class="form-label-group">
-            <input type="email" id="inputEmail" class="form-control" placeholder="Endereço de E-mail" required autofocus>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Endereço de E-mail" required
+                autofocus>
             <label for="inputEmail">E-mail</label>
         </div>
 
@@ -144,32 +154,33 @@
     </form>
 
 </body>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
 <script src="assets/js/vendor/popper.min.js"></script>
 <script src="dist/js/bootstrap.min.js"></script>
 <!-- Bootstrap Date-Picker Plugin -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
 
 <script>
     //invoke background fadein on page load 
-    $(window).ready(function() {
+    $(window).ready(function () {
         $('#background').fadeIn(1500);
-        setTimeout(function() {
+        setTimeout(function () {
             $('#background').removeClass('loading');
         }, 1000);
 
         //fadeIn rate in milliseconds. 
         //A higher number = slower fadeIn rate 
-        var date_input=$('input[name="date"]'); //our date input has the name "date"
-      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-      var options={
-        format: 'mm/dd/yyyy',
-        container: container,
-        todayHighlight: true,
-        autoclose: true,
-      };
-      date_input.datepicker(options);
+        var date_input = $('input[name="date"]'); //our date input has the name "date"
+        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+        var options = {
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        };
+        date_input.datepicker(options);
+
     });
 </script>
 
